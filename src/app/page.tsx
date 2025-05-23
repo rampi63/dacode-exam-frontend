@@ -16,6 +16,8 @@ export default function Home() {
 
   const { data, loading, error } = useQuery(PING);
 
+  console.log("variable", process.env.NEXT_PUBLIC_BACKEND_URL);
+
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error 😢</p>;
 
