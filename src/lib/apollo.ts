@@ -1,7 +1,7 @@
 import { ApolloClient, InMemoryCache, createHttpLink } from "@apollo/client";
 
 const httpLink = createHttpLink({
-    uri: process.env.NEXT_PUBLIC_BACKEND_URL,
+    uri: process.env.NEXT_PUBLIC_BACKEND_URL!,
     credentials: "include", // Para enviar cookies
 });
 
