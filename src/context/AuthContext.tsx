@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, useContext, useEffect, useState } from "react";
+import { createContext, useContext, useState } from "react";
 import { useRouter } from "next/navigation";
 import { useQuery, gql } from "@apollo/client";
 
@@ -59,7 +59,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
                 }),
             });
         } catch (err) {
-            console.error("❌ Error al cerrar sesión:", err);
+            console.error("Error al cerrar sesión:", err);
         }
 
         document.cookie = 'accessToken=; Max-Age=0; path=/';

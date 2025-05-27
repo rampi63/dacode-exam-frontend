@@ -26,7 +26,7 @@ export default function TasksPage() {
     const [creatingTask, setCreatingTask] = useState(false);
     const [deleteTask] = useMutation(DELETE_TASK);
 
-    const { data, loading: taskLoading, error, refetch } = useQuery(GET_TASKS, {
+    const { data, loading: taskLoading, refetch } = useQuery(GET_TASKS, {
         variables: { page, limit: 5 },
     });
 

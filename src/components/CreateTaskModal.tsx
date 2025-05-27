@@ -1,19 +1,28 @@
 'use client';
 
 import { useForm } from 'react-hook-form';
-import { UPDATE_TASK } from '@/lib/graphql/mutations/updateTask';
 import { useMutation } from '@apollo/client';
 import { Button } from './ui/button';
 import { Textarea } from './ui/textarea';
 import { Input } from './ui/input';
 import { CREATE_TASK } from '@/lib/graphql/mutations/createTask';
 
-export default function CreateTaskModal({ onClose, refetch }: any) {
+interface CreateTaskModalProps {
+    onClose: () => void;
+    refetch: () => void;
+}
 
-    const { register, handleSubmit, reset } = useForm();
+export default function CreateTaskModal({ onClose, refetch }: CreateTaskModalProps) {
+
+    const { register, handleSubmit } = useForm<TaskFormData>();
     const [createTask] = useMutation(CREATE_TASK);
 
-    const onSubmit = async (data: any) => {
+    interface TaskFormData {
+        title: string;
+        description: string;
+    }
+
+    const onSubmit = async (data: TaskFormData) => {
         try {
             await createTask({ variables: { input: data } });
             onClose();

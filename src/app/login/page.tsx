@@ -5,12 +5,10 @@ import { LOGIN_MUTATION } from "@/lib/graphql/mutations/login";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
-import { useRouter } from "next/navigation";
 import { useState } from "react";
 import {
     Card,
     CardContent,
-    CardDescription,
     CardFooter,
     CardHeader,
     CardTitle,
@@ -26,7 +24,6 @@ const schema = z.object({
 type FormData = z.infer<typeof schema>;
 
 export default function LoginPage() {
-    const router = useRouter();
     const [loginUser, { loading }] = useMutation(LOGIN_MUTATION);
     const [formError, setFormError] = useState<string | null>(null);
 

@@ -4,8 +4,19 @@ import { useForm } from 'react-hook-form';
 import { UPDATE_TASK } from '@/lib/graphql/mutations/updateTask';
 import { useMutation } from '@apollo/client';
 
-export default function EditTaskModal({ task, onClose, refetch }: any) {
-    const { register, handleSubmit, reset } = useForm({
+interface EditTaskModalProps {
+    task: {
+        id: string;
+        title: string;
+        description: string;
+        status: string;
+    };
+    onClose: () => void;
+    refetch: () => void;
+}
+
+export default function EditTaskModal({ task, onClose, refetch }: EditTaskModalProps) {
+    const { register, handleSubmit } = useForm({
         defaultValues: {
             title: task.title,
             description: task.description,
@@ -15,7 +26,7 @@ export default function EditTaskModal({ task, onClose, refetch }: any) {
 
     const [updateTask] = useMutation(UPDATE_TASK);
 
-    const onSubmit = async (data: any) => {
+    const onSubmit = async (data: { title: string; description: string; status: string }) => {
         await updateTask({ variables: { id: task.id, input: data } });
         onClose();
         refetch();

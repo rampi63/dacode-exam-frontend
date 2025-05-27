@@ -1,4 +1,4 @@
-import { ApolloClient, InMemoryCache, createHttpLink, from, gql } from "@apollo/client";
+import { ApolloClient, InMemoryCache, createHttpLink, from } from "@apollo/client";
 import { onError } from "@apollo/client/link/error";
 import { fromPromise } from '@apollo/client/link/utils';
 
