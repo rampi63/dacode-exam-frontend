@@ -1,36 +1,70 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## DaCode Exam – Frontend
 
-## Getting Started
+Este es el frontend de **DaCode Exam**, desarrollado en **Next.js 15 (App Router)** con **Apollo Client**, **React Hook Form** y **TailwindCSS**. Desplegado en **Railway**.
 
-First, run the development server:
+## 🚀 Tecnologías
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- Next.js App Router
+- Apollo Client + GraphQL
+- React Hook Form + Zod
+- TailwindCSS
+- Context API para autenticación
+- Cookies seguras con credenciales
+
+---
+
+## 🔐 Variables de entorno
+
+Crea un archivo `.env.local` con el siguiente contenido:
+
+```env
+NEXT_PUBLIC_BACKEND_URL=http://localhost:4000/graphql
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 📂 Estructura
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+src/
+├── app/              // Rutas (pages)
+│   └── tasks/        // Página protegida de tareas
+├── lib/              // GraphQL queries/mutations
+├── components/       // Formulario, modales, layouts
+├── context/          // AuthContext
+└── styles/           // Tailwind (si aplica)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🔐 Autenticación
 
-## Learn More
+Login y logout usando JWT en cookies HttpOnly
 
-To learn more about Next.js, take a look at the following resources:
+Manejo automático de refreshToken en Apollo
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Rutas protegidas con redirección si no hay sesión
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🚀 Despliegue
 
-## Deploy on Vercel
+El frontend está desplegado en Railway o Vercel en:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+https://dacode-exam-frontend-production.up.railway.app/
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Desarrollo
+
+npm run dev
+
+## Build y producción
+
+npm run build && npm start
+
+## ✨ Funcionalidad implementada
+
+Login / Registro
+
+Logout limpio con invalidación de token
+
+CRUD completo de tareas
+
+Edición en modal
+
+Paginación de tareas
+
+Refetch automático después de cada cambio
+
+---
