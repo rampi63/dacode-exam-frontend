@@ -126,7 +126,6 @@ export default function TasksPage() {
 
                 {creatingTask && (
                     <CreateTaskModal
-                        task={creatingTask}
                         onClose={() => setCreatingTask(false)}
                         refetch={refetch}
                     />
