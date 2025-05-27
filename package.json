@@ -10,15 +10,23 @@
   },
   "dependencies": {
     "@apollo/client": "^3.13.8",
+    "@hookform/resolvers": "^5.0.1",
     "@next/env": "^15.1.8",
+    "@radix-ui/react-dialog": "^1.1.14",
+    "@radix-ui/react-slot": "^1.2.3",
     "autoprefixer": "^10.4.21",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
     "graphql": "^16.11.0",
     "jwt-decode": "^4.0.0",
+    "lucide-react": "^0.511.0",
     "next": "15.1.8",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-hook-form": "^7.56.4",
-    "zod": "^3.25.23"
+    "tailwind-merge": "^3.3.0",
+    "tailwindcss-animate": "^1.0.7",
+    "zod": "^3.25.30"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
